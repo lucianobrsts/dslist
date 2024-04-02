@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
-import com.devsuperior.dslist.entities.Game;
 import com.devsuperior.dslist.services.GameService;
 
 @RestController
@@ -26,9 +26,9 @@ public class GameController {
 		return result;
 	}
 
-	@GetMapping("/{id}")
-	public ResponseEntity<Game> findById(@PathVariable("id") Long id) {
-		Game entity = gameService.findById(id);
+	@GetMapping(value = "/{id}")
+	public ResponseEntity<GameDTO> findById(@PathVariable("id") Long id) {
+		GameDTO entity = gameService.findById(id);
 		return ResponseEntity.ok(entity);
 	}
 
