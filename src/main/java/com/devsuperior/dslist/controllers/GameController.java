@@ -18,7 +18,7 @@ import com.devsuperior.dslist.services.GameService;
 public class GameController {
 
 	@Autowired
-	GameService gameService;
+	private GameService gameService;
 
 	@GetMapping
 	public List<GameMinDTO> findAll() {
